@@ -122,3 +122,27 @@ Fri 14 Oct 2022 10:20:20 PM UTC:
  tests:  2|2
 total_score: 20/70
 d1b45a0
+Fri 14 Oct 2022 11:31:01 PM UTC: 
+ heap.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:30:16: error: invalid type argument of ‘->’ (have ‘int’)
+   30 |   if(pq->size+1->pq->capac)
+      |                ^~
+heap.c:32:20: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capa’; did you mean ‘capac’?
+   32 |     pq->capac= pq->capa*2+1;
+      |                    ^~~~
+      |                    capac
+heap.c:33:5: error: ‘s’ undeclared (first use in this function)
+   33 |     s
+      |     ^
+heap.c:33:5: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:33:6: error: expected ‘;’ before ‘}’ token
+   33 |     s
+      |      ^
+      |      ;
+   34 |   }
+      |   ~   
+Compilation failed
+5f88d7a

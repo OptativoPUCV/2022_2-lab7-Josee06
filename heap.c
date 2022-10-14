@@ -25,12 +25,21 @@ void* heap_top(Heap* pq)
 
 
 
-void heap_push(Heap* pq, void* data, int priority){
+void heap_push(Heap* pq, void* data, int priority)
+{
+  if(pq->size+1->pq->capac)
+  {
+    pq->capac= pq->capa*2+1;
+    s
+  }
+  
 
 }
 
 
-void heap_pop(Heap* pq){
+void heap_pop(Heap* pq)
+{
+  
 
 }
 
@@ -42,5 +51,4 @@ Heap* createHeap()
   new->size=0;
   new->capac = 3;
   return new;
-
 }
