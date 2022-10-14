@@ -27,12 +27,7 @@ void* heap_top(Heap* pq)
 
 void heap_push(Heap* pq, void* data, int priority)
 {
-  if(pq->size+1->pq->capac)
-  {
-    pq->capac= pq->capa*2+1;
-    s
-  }
-  
+
 
 }
 

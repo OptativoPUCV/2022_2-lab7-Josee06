@@ -146,3 +146,9 @@ heap.c:33:6: error: expected ‘;’ before ‘}’ token
       |   ~   
 Compilation failed
 5f88d7a
+Fri 14 Oct 2022 11:31:11 PM UTC: 
+ heap.c | 5 -----
+ 1 file changed, 5 deletions(-)
+ tests:  2|2
+total_score: 20/70
+e2d9159
