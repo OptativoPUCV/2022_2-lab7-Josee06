@@ -35,3 +35,40 @@ heap.c:23:1: error: control reaches end of non-void function [-Werror=return-typ
 cc1: all warnings being treated as errors
 Compilation failed
 0a55fea
+Fri 14 Oct 2022 10:16:00 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:38:3: error: unknown type name ‘heap’; did you mean ‘Heap’?
+   38 |   heap *new =(Heap *) malloc (sizeof(Heap));
+      |   ^~~~
+      |   Heap
+heap.c:38:14: error: initialization of ‘int *’ from incompatible pointer type ‘Heap *’ {aka ‘struct Heap *’} [-Werror=incompatible-pointer-types]
+   38 |   heap *new =(Heap *) malloc (sizeof(Heap));
+      |              ^
+heap.c:39:6: error: request for member ‘heapArray’ in something not a structure or union
+   39 |   new->heapArray=(heapElem)* malloc (3*sizeof(heapElem));
+      |      ^~
+heap.c:39:28: error: dereferencing ‘void *’ pointer [-Werror]
+   39 |   new->heapArray=(heapElem)* malloc (3*sizeof(heapElem));
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+heap.c:39:18: error: invalid use of void expression
+   39 |   new->heapArray=(heapElem)* malloc (3*sizeof(heapElem));
+      |                  ^
+heap.c:40:6: error: request for member ‘size’ in something not a structure or union
+   40 |   new->size=0;
+      |      ^~
+heap.c:41:6: error: request for member ‘capac’ in something not a structure or union
+   41 |   new->capac = 3;
+      |      ^~
+heap.c:42:10: error: returning ‘int *’ from a function with incompatible return type ‘Heap *’ {aka ‘struct Heap *’} [-Werror=incompatible-pointer-types]
+   42 |   return new;
+      |          ^~~
+heap.c: In function ‘heap_top’:
+heap.c:23:1: error: control reaches end of non-void function [-Werror=return-type]
+   23 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+4cd2fab
