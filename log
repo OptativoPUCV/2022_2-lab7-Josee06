@@ -2,3 +2,36 @@ Fri 14 Oct 2022 10:10:01 PM UTC:
  tests:  0|4
 total_score: 0/70
 b57a5a0
+Fri 14 Oct 2022 10:15:22 PM UTC: 
+ heap.c | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:38:18: error: initialization of ‘heapElem *’ {aka ‘struct nodo *’} from incompatible pointer type ‘Heap *’ {aka ‘struct Heap *’} [-Werror=incompatible-pointer-types]
+   38 |   heapElem* new =(Heap *) malloc (sizeof(Heap));
+      |                  ^
+heap.c:39:6: error: ‘heapElem’ {aka ‘struct nodo’} has no member named ‘heapArray’
+   39 |   new->heapArray=(heapElem)* malloc (3*sizeof(heapElem));
+      |      ^~
+heap.c:39:28: error: dereferencing ‘void *’ pointer [-Werror]
+   39 |   new->heapArray=(heapElem)* malloc (3*sizeof(heapElem));
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+heap.c:39:18: error: invalid use of void expression
+   39 |   new->heapArray=(heapElem)* malloc (3*sizeof(heapElem));
+      |                  ^
+heap.c:40:6: error: ‘heapElem’ {aka ‘struct nodo’} has no member named ‘size’
+   40 |   new->size=0;
+      |      ^~
+heap.c:41:6: error: ‘heapElem’ {aka ‘struct nodo’} has no member named ‘capac’
+   41 |   new->capac = 3;
+      |      ^~
+heap.c:42:10: error: returning ‘heapElem *’ {aka ‘struct nodo *’} from a function with incompatible return type ‘Heap *’ {aka ‘struct Heap *’} [-Werror=incompatible-pointer-types]
+   42 |   return new;
+      |          ^~~
+heap.c: In function ‘heap_top’:
+heap.c:23:1: error: control reaches end of non-void function [-Werror=return-type]
+   23 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+0a55fea
