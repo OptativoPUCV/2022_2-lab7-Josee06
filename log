@@ -72,3 +72,21 @@ heap.c:23:1: error: control reaches end of non-void function [-Werror=return-typ
 cc1: all warnings being treated as errors
 Compilation failed
 4cd2fab
+Fri 14 Oct 2022 10:16:06 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:39:28: error: dereferencing ‘void *’ pointer [-Werror]
+   39 |   new->heapArray=(heapElem)* malloc (3*sizeof(heapElem));
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+heap.c:39:18: error: invalid use of void expression
+   39 |   new->heapArray=(heapElem)* malloc (3*sizeof(heapElem));
+      |                  ^
+heap.c: In function ‘heap_top’:
+heap.c:23:1: error: control reaches end of non-void function [-Werror=return-type]
+   23 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+87039cc
