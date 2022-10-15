@@ -196,3 +196,28 @@ heap.c:38:26: error: ‘heapArray’ undeclared (first use in this function)
 heap.c:38:26: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 c4d2503
+Sat 15 Oct 2022 03:45:45 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:33:51: error: expected expression before ‘heapElem’
+   33 |     pq->heapArray= (heapElem*) realloc( pq->capac,heapElem);
+      |                                                   ^~~~~~~~
+heap.c:33:43: error: passing argument 1 of ‘realloc’ makes pointer from integer without a cast [-Werror=int-conversion]
+   33 |     pq->heapArray= (heapElem*) realloc( pq->capac,heapElem);
+      |                                         ~~^~~~~~~
+      |                                           |
+      |                                           int
+In file included from test.c:2:
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/stdlib.h:550:29: note: expected ‘void *’ but argument is of type ‘int’
+  550 | extern void *realloc (void *__ptr, size_t __size)
+      |                       ~~~~~~^~~~~
+In file included from test.c:4:
+heap.c:38:26: error: ‘heapArray’ undeclared (first use in this function)
+   38 |       pq->heapArray[now]=heapArray[(now-1/2)];
+      |                          ^~~~~~~~~
+heap.c:38:26: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+4416fdf
